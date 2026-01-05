@@ -162,41 +162,65 @@
     </section>
 
     <section id="proyectos" class="max-w-6xl mx-auto py-24 px-6">
-        <span class="section-title">Proyectos Destacados</span>
-        <div class="bento-grid">
+    <span class="section-title">Proyectos Destacados</span>
+    <div class="bento-grid">
+        
+        <div class="glass-card col-span-2 group cursor-pointer hover:border-blue-500/50 transition-all" onclick="openModal('modal-fitness')">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold">Fitness Launcher</h3>
+                <i data-lucide="maximize-2" class="text-gray-500 group-hover:text-blue-400 transition-colors"></i>
+            </div>
             
-            <div class="glass-card col-span-2 group cursor-pointer hover:border-blue-500/50 transition-all" onclick="openModal('modal-fitness')">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-2xl font-bold">Fitness Launcher</h3>
-                    <i data-lucide="maximize-2" class="text-gray-500 group-hover:text-blue-400 transition-colors"></i>
-                </div>
-                
-                <p class="text-gray-400 text-sm mb-4">Launcher Android especializado con conexión Bluetooth FTMS.</p>
-                
-                <div class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative">
-                    <img src="ruta-a-tu-captura.jpg" alt="Preview Fitness App" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="bg-blue-500/20 p-3 rounded-full backdrop-blur-sm border border-blue-500/30 group-hover:bg-blue-500 group-hover:text-white transition-all">
-                            <i data-lucide="play" class="text-blue-400 group-hover:text-white" size="24"></i>
-                        </div>
+            <p class="text-gray-400 text-sm mb-4">Launcher Android especializado con conexión Bluetooth FTMS.</p>
+            
+            <div class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative">
+                <img src="tu-captura-fitness.jpg" alt="Preview Fitness App" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="bg-blue-500/20 p-3 rounded-full backdrop-blur-sm border border-blue-500/30 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                        <i data-lucide="play" class="text-blue-400 group-hover:text-white" size="24"></i>
                     </div>
                 </div>
-
-                <div class="flex gap-2 mt-auto">
-                    <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Kotlin</span>
-                    <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">BLE</span>
-                </div>
             </div>
 
-            <div class="glass-card col-span-2">
-                <h3 class="text-xl font-bold mb-2">Vending Automation</h3>
-                <p class="text-gray-400 text-sm mb-4">Sistema de gestión y automatización de procesos para expendedoras.</p>
-                <div class="flex gap-2 mt-auto">
-                    <span class="text-[10px] bg-white/5 px-2 py-1 rounded border border-white/10">Java</span>
-                </div>
+            <div class="flex gap-2 mt-auto">
+                <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Kotlin</span>
+                <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">BLE</span>
             </div>
         </div>
-    </section>
+
+        <div class="glass-card col-span-2 group cursor-pointer hover:border-green-500/50 transition-all" onclick="openModal('modal-techspecs')">
+    <div class="flex justify-between items-center mb-4">
+        <h3 class="text-2xl font-bold">TechSpecs DB</h3>
+        <i data-lucide="maximize-2" class="text-gray-500 group-hover:text-green-400 transition-colors"></i>
+    </div>
+    
+    <p class="text-gray-400 text-sm mb-4">Gestión CRUD de fichas técnicas con MongoDB Atlas y Cloudinary.</p>
+    
+    <div class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative">
+        <img src="tu-captura-db.jpg" alt="Preview TechSpecs DB" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="bg-green-500/20 p-3 rounded-full backdrop-blur-sm border border-green-500/30 group-hover:bg-green-500 group-hover:text-white transition-all">
+                <i data-lucide="play" class="text-green-400 group-hover:text-white" size="24"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex gap-2 mt-auto">
+        <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">Python</span>
+        <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">MongoDB Atlas</span>
+    </div>
+</div>
+
+        <div class="glass-card col-span-2 md:col-span-4">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="text-xl font-bold">Vending Automation</h3>
+                <span class="text-[10px] bg-white/5 px-2 py-1 rounded border border-white/10">Java</span>
+            </div>
+            <p class="text-gray-400 text-sm">Sistema de gestión y automatización de procesos para máquinas expendedoras.</p>
+        </div>
+        
+    </div>
+</section>
 
     <section id="sobre-mi" class="max-w-6xl mx-auto py-24 px-6 border-t border-white/5">
         <span class="section-title">Conóceme</span>
@@ -255,6 +279,38 @@
             <p class="text-gray-400 mt-4 text-sm">Demostración en tiempo real de la conexión BLE.</p>
         </div>
     </div>
+
+    <div id="modal-techspecs" class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+    <div class="bg-[#0a0a0a] border border-white/10 rounded-3xl max-w-5xl w-full p-6 overflow-hidden relative shadow-2xl animate-in fade-in zoom-in duration-300">
+        
+        <button onclick="closeModal('modal-techspecs')" class="absolute top-4 right-4 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10">
+            <i data-lucide="x" class="text-white"></i>
+        </button>
+
+        <h3 class="text-2xl font-bold mb-6 text-green-500">TechSpecs DB Demo</h3>
+        
+        <div class="aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(34,197,94,0.2)]">
+            <iframe 
+                class="w-full h-full" 
+                src="https://www.youtube.com/embed/LX3tZvWocW8" 
+                title="TechSpecs DB Demo" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="mt-6 text-gray-300 text-sm">
+            <p class="leading-relaxed mb-4">
+                Aplicación de escritorio desarrollada en Python para centralizar la gestión de maquinaria. Implementa un sistema MongoDB para mayor flexibilidad en los datos técnicos.
+            </p>
+            <ul class="flex gap-4">
+                <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-green-500"></i> Almacenamiento en la nube (Cloudinary)</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-green-500"></i> Base de datos remota (Atlas)</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
