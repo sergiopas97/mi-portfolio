@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sergio Pastor | Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --accent-blue: #3b82f6;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: white;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            background-image: radial-gradient(circle at 50% -20%, #1e293b 0%, #050505 80%);
+            margin: 0;
+        }
+
+        nav {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Obliga a la tarjeta a ocupar todo el alto de la fila */
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #64748b;
+            margin-bottom: 3rem;
+            display: block;
+            text-align: center;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .bento-grid { display: flex; flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed top-0 w-full z-50">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="foto-sergio.jpg" alt="Sergio" class="w-8 h-8 rounded-full border border-blue-500/50 object-cover" />
+                <span class="font-extrabold tracking-tighter text-xl">SP<span class="text-blue-500">.</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
+                <a href="#experiencia" class="hover:text-white transition-colors">Experiencia</a>
+                <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a>
+                <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre mí</a>
+            </div>
+            <a href="mailto:sergio041997@gmail.com" class="bg-white text-black px-4 py-2 rounded-full text-xs font-bold hover:bg-blue-500 hover:text-white transition-all shadow-lg shadow-white/5">Contacto</a>
+        </div>
+    </nav>
+
+    <section id="inicio" class="h-screen flex flex-col items-center justify-center text-center px-6">
+        <span class="text-blue-500 font-bold tracking-widest text-xs mb-4 uppercase">Software Developer</span>
+        <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-6">Sergio Pastor</h1>
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed">
+            Especializado en el desarrollo de aplicaciones multiplataforma con <span class="text-white font-semibold">Kotlin, Android y Python.</span>
+        </p>
+        <div class="mt-10 flex flex-wrap justify-center gap-4">
+            <a href="#proyectos" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-2xl font-bold transition-all shadow-lg shadow-blue-600/20">Ver Proyectos</a>
+            <a href="#experiencia" class="border border-white/10 hover:bg-white/5 text-white px-8 py-3 rounded-2xl font-bold transition-all">Mi Experiencia</a>
+        </div>
+    </section>
+
+    <section id="experiencia" class="max-w-6xl mx-auto py-24 px-6">
+        <span class="section-title">Trayectoria Profesional</span>
+        <div class="bento-grid">
+            
+            <div class="glass-card col-span-2">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold">Bodytone</h3>
+                    <span class="text-xs text-gray-500">Enero 2025 - Septiembre 2025</span>
+                </div>
+                <p class="text-blue-400 text-sm font-medium mb-3">Auxiliar Quality Assurance</p>
+                <ul class="text-gray-400 text-sm leading-relaxed space-y-3 flex-grow">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
+                        <span>Ejecuté pruebas de usuario para garantizar la calidad y funcionalidad de las aplicaciones desarrolladas, identificando y documentando errores para su resolución.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
+                        <span>Colaboré en el ciclo de desarrollo de nuevas máquinas.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
+                        <span>Creé y mantuve documentación técnica detallada para productos y aplicaciones.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
+                        <span>Desarrollé una aplicación de escritorio completa (CRUD) en Python para la gestión interna de fichas técnicas de productos, utilizando MongoDB Atlas y Cloudinary.</span>
+                    </li>
+                </ul>
+            </div>
+
+          <div class="glass-card col-span-2">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold">Vending Servicios Plus</h3>
+                    <span class="text-xs text-gray-500">Abril 2024 - Junio 2024</span>
+                </div>
+                <p class="text-blue-400 text-sm font-medium mb-3">Desarrollador Android</p>
+                <ul class="text-gray-400 text-sm leading-relaxed space-y-3 flex-grow">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
+                        <span>Participé activamente en reuniones directas con el cliente para definir los requisitos y objetivos del software.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
+                        <span>Diseñé y creé la arquitectura de la base de datos para el soporte del sistema de vending.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
+                        <span>Me centré principalmente en el desarrollo del **Front-end**, implementando interfaces intuitivas y funcionales para la gestión y automatización de las máquinas.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card col-span-4 bg-blue-500/5 border-blue-500/20">
+                <h3 class="text-xl font-bold mb-2 text-blue-400">Educación Técnica</h3>
+                <p class="text-sm text-white/80">I.E.S Espeñetas — Desarrollo de Aplicaciones Multiplataforma (DAM)</p>
+                <p class="text-xs text-gray-400 mt-2 italic">2022 - 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="max-w-6xl mx-auto py-24 px-6">
+        <span class="section-title">Proyectos Destacados</span>
+        <div class="bento-grid">
+            
+            <div class="glass-card col-span-2 group cursor-pointer hover:border-blue-500/50 transition-all" onclick="openModal('modal-fitness')">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-2xl font-bold">Fitness Launcher</h3>
+                    <i data-lucide="maximize-2" class="text-gray-500 group-hover:text-blue-400 transition-colors"></i>
+                </div>
+                
+                <p class="text-gray-400 text-sm mb-4">Launcher Android especializado con conexión Bluetooth FTMS.</p>
+                
+                <div class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative">
+                    <img src="ruta-a-tu-captura.jpg" alt="Preview Fitness App" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="bg-blue-500/20 p-3 rounded-full backdrop-blur-sm border border-blue-500/30 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                            <i data-lucide="play" class="text-blue-400 group-hover:text-white" size="24"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-2 mt-auto">
+                    <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Kotlin</span>
+                    <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">BLE</span>
+                </div>
+            </div>
+
+            <div class="glass-card col-span-2">
+                <h3 class="text-xl font-bold mb-2">Vending Automation</h3>
+                <p class="text-gray-400 text-sm mb-4">Sistema de gestión y automatización de procesos para expendedoras.</p>
+                <div class="flex gap-2 mt-auto">
+                    <span class="text-[10px] bg-white/5 px-2 py-1 rounded border border-white/10">Java</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="max-w-6xl mx-auto py-24 px-6 border-t border-white/5">
+        <span class="section-title">Conóceme</span>
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+            <div class="w-64 h-64 shrink-0 relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <img src="foto-sergio.jpg" alt="Sergio Pastor" class="relative w-full h-full object-cover rounded-2xl border border-white/10 shadow-2xl" />
+            </div>
+            <div class="flex-1">
+                <h3 class="text-3xl font-bold mb-6 text-left">Sobre mí</h3>
+                <p class="text-gray-400 leading-relaxed mb-6 text-left">
+                    Soy un desarrollador con experiencia en Java, Kotlin y Python. Mi trayectoria incluye un pasado en electromecánica, lo que me otorga una capacidad resolutiva única para abordar problemas técnicos complejos, uniendo el hardware con soluciones de software eficientes.
+                </p>
+                <div class="grid grid-cols-2 gap-4 text-sm text-gray-300">
+                    <div class="flex items-center gap-2"><i data-lucide="users" size="16" class="text-blue-500"></i> Trabajo en equipo</div>
+                    <div class="flex items-center gap-2"><i data-lucide="zap" size="16" class="text-blue-500"></i> Resolutivo</div>
+                    <div class="flex items-center gap-2"><i data-lucide="palette" size="16" class="text-blue-500"></i> Creativo</div>
+                    <div class="flex items-center gap-2"><i data-lucide="car" size="16" class="text-blue-500"></i> Movilidad total</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="py-24 text-center border-t border-white/5">
+        <h2 class="text-3xl font-bold mb-8">¿Hablamos?</h2>
+        <div class="flex justify-center gap-6">
+            <a href="mailto:sergio041997@gmail.com" class="p-4 bg-white/5 rounded-2xl hover:bg-blue-500 transition-all group border border-white/5">
+                <i data-lucide="mail" class="group-hover:scale-110 transition-transform"></i>
+            </a>
+            <a href="https://github.com" target="_blank" class="p-4 bg-white/5 rounded-2xl hover:bg-blue-500 transition-all group border border-white/5">
+                <i data-lucide="github" class="group-hover:scale-110 transition-transform"></i>
+            </a>
+        </div>
+        <p class="text-gray-600 text-xs mt-12 italic">© 2025 Sergio Pastor | El Siscar, Murcia</p>
+    </footer>
+
+    <div id="modal-fitness" class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+        <div class="bg-[#0a0a0a] border border-white/10 rounded-3xl max-w-5xl w-full p-6 overflow-hidden relative shadow-2xl animate-in fade-in zoom-in duration-300">
+            <button onclick="closeModal('modal-fitness')" class="absolute top-4 right-4 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10">
+                <i data-lucide="x" class="text-white"></i>
+            </button>
+            <h3 class="text-2xl font-bold mb-6 text-blue-500">Fitness Launcher Demo</h3>
+            
+            <div class="aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(59,130,246,0.2)]">
+                <div class="aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(59,130,246,0.2)]">
+    <iframe 
+        class="w-full h-full" 
+        src="https://www.youtube.com/embed/3PEydPA3cLQ" 
+        title="Fitness Launcher Demo" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+</div>
+            </div>
+            <p class="text-gray-400 mt-4 text-sm">Demostración en tiempo real de la conexión BLE.</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+        
+        document.querySelectorAll(".glass-card").forEach((card) => {
+            card.addEventListener("mousemove", (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / card.clientWidth) * 100;
+                const y = ((e.clientY - rect.top) / card.clientHeight) * 100;
+                card.style.setProperty("--x", `${x}%`);
+                card.style.setProperty("--y", `${y}%`);
+            });
+        });
+
+        // NUEVAS FUNCIONES PARA EL MODAL
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal-fitness');
+            if (event.target == modal) {
+                closeModal('modal-fitness');
+            }
+        }
+    </script>
+</body>
+</html>
