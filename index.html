@@ -182,9 +182,11 @@
                 </div>
             </div>
 
-            <div class="flex gap-2 mt-auto">
+            <div class="flex flex-wrap gap-2 mt-auto">
                 <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Kotlin</span>
                 <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">BLE</span>
+                <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Android</span>
+                <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Jetpack Compose</span>
             </div>
         </div>
 
@@ -205,19 +207,38 @@
         </div>
     </div>
 
-    <div class="flex gap-2 mt-auto">
+    <div class="flex flex-wrap gap-2 mt-auto">
         <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">Python</span>
         <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">MongoDB Atlas</span>
+        <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">Cloudinary</span>
+        <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">Tkinter</span>
     </div>
 </div>
 
-        <div class="glass-card col-span-2 md:col-span-4">
-            <div class="flex justify-between items-center mb-2">
-                <h3 class="text-xl font-bold">Vending Automation</h3>
-                <span class="text-[10px] bg-white/5 px-2 py-1 rounded border border-white/10">Java</span>
+       <div class="glass-card col-span-2 md:col-span-4 group cursor-pointer hover:border-orange-500/50 transition-all" onclick="openModal('modal-vending')">
+    <div class="flex justify-between items-center mb-4">
+        <h3 class="text-2xl font-bold">Vending Automation</h3>
+        <i data-lucide="maximize-2" class="text-gray-500 group-hover:text-orange-400 transition-colors"></i>
+    </div>
+    
+    <p class="text-gray-400 text-sm mb-4">Sistema de gestión y automatización de procesos para máquinas expendedoras con Java y Android.</p>
+    
+    <div class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative">
+        <img src="tu-captura-vending.jpg" alt="Preview Vending App" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="bg-orange-500/20 p-3 rounded-full backdrop-blur-sm border border-orange-500/30 group-hover:bg-orange-500 group-hover:text-white transition-all">
+                <i data-lucide="play" class="text-orange-400 group-hover:text-white" size="24"></i>
             </div>
-            <p class="text-gray-400 text-sm">Sistema de gestión y automatización de procesos para máquinas expendedoras.</p>
         </div>
+    </div>
+
+    <div class="flex flex-wrap gap-2 mt-auto">
+        <span class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">Java</span>
+        <span class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">Android SDK</span>
+        <span class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">UI/UX Design</span>
+        <span class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">SQLite</span>
+    </div>
+</div>
         
     </div>
 </section>
@@ -312,6 +333,39 @@
     </div>
 </div>
 
+<div id="modal-vending" class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+    <div class="bg-[#0a0a0a] border border-white/10 rounded-3xl max-w-5xl w-full p-6 overflow-hidden relative shadow-2xl animate-in fade-in zoom-in duration-300">
+        
+        <button onclick="closeModal('modal-vending')" class="absolute top-4 right-4 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10">
+            <i data-lucide="x" class="text-white"></i>
+        </button>
+
+        <h3 class="text-2xl font-bold mb-6 text-orange-500">Vending Automation Demo</h3>
+        
+        <div class="aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(249,115,22,0.2)]">
+            <iframe 
+                class="w-full h-full" 
+                src="https://www.youtube.com/embed/hp4YwsgOcLY" 
+                title="Vending Automation Demo" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="mt-6 text-gray-300 text-sm">
+            <p class="leading-relaxed mb-4">
+                Desarrollo centrado en la optimización de procesos de venta automática. Incluye gestión de stock en tiempo real y una interfaz adaptada para terminales industriales.
+            </p>
+            <ul class="flex flex-wrap gap-4">
+                <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-orange-500"></i> Toma de requisitos con cliente</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-orange-500"></i> Diseño de Front-end intuitivo</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-orange-500"></i> Arquitectura de Base de Datos</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
@@ -342,11 +396,15 @@
         }
 
         window.onclick = function(event) {
-            const modal = document.getElementById('modal-fitness');
-            if (event.target == modal) {
-                closeModal('modal-fitness');
-            }
+            const modalFitness = document.getElementById('modal-fitness');
+            const modalTech = document.getElementById('modal-techspecs');
+            const modalVending = document.getElementById('modal-vending'); // Nuevo
+    
+            if (event.target == modalFitness) closeModal('modal-fitness');
+            if (event.target == modalTech) closeModal('modal-techspecs');
+            if (event.target == modalVending) closeModal('modal-vending'); // Nuevo
         }
+        
     </script>
 </body>
 </html>
