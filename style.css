@@ -89,7 +89,6 @@ body {
     .profile { grid-column: span 1; }
 }
 
-/* Añade esto a tu <style> */
 .tag-android {
     font-size: 10px;
     font-weight: 800;

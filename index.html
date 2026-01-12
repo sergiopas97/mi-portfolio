@@ -1,535 +1,853 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sergio Pastor | Portafolio</title>
+    <meta
+      name="description"
+      content="Portafolio de Sergio Pastor. Desarrollador de Software especializado en Android, Kotlin, Python y React."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://sergiopas97.github.io/mi-portfolio/"
+    />
+    <meta property="og:title" content="Sergio Pastor | Software Developer" />
+    <meta
+      property="og:description"
+      content="Echa un vistazo a mis proyectos en Android, integración IoT y desarrollo Full Stack."
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/sergiopas97/mi-portfolio/main/captura-fitness.jpg"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://sergiopas97.github.io/mi-portfolio/"
+    />
+    <meta
+      property="twitter:title"
+      content="Sergio Pastor | Software Developer"
+    />
+    <meta
+      property="twitter:description"
+      content="Echa un vistazo a mis proyectos en Android, integración IoT y desarrollo Full Stack."
+    />
+    <meta
+      property="twitter:image"
+      content="https://raw.githubusercontent.com/sergiopas97/mi-portfolio/main/captura-fitness.jpg"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        :root {
-            --bg-dark: #050505;
-            --accent-blue: #3b82f6;
-        }
+      :root {
+        --bg-dark: #050505;
+        --accent-blue: #3b82f6;
+      }
 
-        body {
-            background-color: var(--bg-dark);
-            color: white;
-            font-family: "Plus Jakarta Sans", sans-serif;
-            background-image: radial-gradient(circle at 50% -20%, #1e293b 0%, #050505 80%);
-            margin: 0;
-        }
+      body {
+        background-color: var(--bg-dark);
+        color: white;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-image: radial-gradient(
+          circle at 50% -20%,
+          #1e293b 0%,
+          #050505 80%
+        );
+        margin: 0;
+      }
 
-        nav {
-            background: rgba(10, 10, 10, 0.7);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
+      nav {
+        background: rgba(10, 10, 10, 0.7);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            padding: 2rem;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            /* Obliga a la tarjeta a ocupar todo el alto de la fila */
-        }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 24px;
+        padding: 2rem;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        --x: 50%;
+        --y: 50%;
+        position: relative;
+        overflow: hidden;
+        /* Obliga a la tarjeta a ocupar todo el alto de la fila */
+      }
 
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
-        }
+      .glass-card:hover {
+        background: rgba(255, 255, 255, 0.07);
+        border-color: var(--accent-blue);
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+      }
 
-        .section-title {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: #64748b;
-            margin-bottom: 3rem;
-            display: block;
-            text-align: center;
-        }
+      /* El círculo de luz que sigue al ratón */
+      .glass-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        /* Creamos un degradado radial que usa las variables de JS */
+        background: radial-gradient(
+          600px circle at var(--x) var(--y),
+          rgba(59, 130, 246, 0.15),
+          transparent 40%
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        z-index: 1;
+      }
 
+      .glass-card:hover::after {
+        opacity: 1;
+      }
+      .section-title {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #64748b;
+        margin-bottom: 3rem;
+        display: block;
+        text-align: center;
+      }
+
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+
+      @media (max-width: 1024px) {
         .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+          grid-template-columns: repeat(2, 1fr);
         }
+      }
 
-        @media (max-width: 1024px) {
-            .bento-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+      @media (max-width: 640px) {
+        .bento-grid {
+          display: flex;
+          flex-direction: column;
         }
-
-        @media (max-width: 640px) {
-            .bento-grid {
-                display: flex;
-                flex-direction: column;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <nav class="fixed top-0 w-full z-50">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <img src="foto-perfil.jpg" alt="Sergio"
-                    class="w-8 h-8 rounded-full border border-blue-500/50 object-cover" />
-                <span class="font-extrabold tracking-tighter text-xl">SP<span class="text-blue-500">.</span></span>
-            </div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
-                <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
-                <a href="#experiencia" class="hover:text-white transition-colors">Experiencia</a>
-                <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a>
-                <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre mí</a>
-            </div>
-                <a href="#contacto" class="bg-white text-black px-4 py-2 rounded-full text-xs font-bold hover:bg-blue-500 hover:text-white transition-all shadow-lg shadow-white/5">
-                    Contacto
-                </a>
+      <div
+        class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-3">
+          <img
+            src="foto-perfil.jpg"
+            alt="Sergio"
+            class="w-8 h-8 rounded-full border border-blue-500/50 object-cover"
+          />
+          <span class="font-extrabold tracking-tighter text-xl"
+            >SP<span class="text-blue-500">.</span></span
+          >
         </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+          <a href="#inicio" class="hover:text-white transition-colors"
+            >Inicio</a
+          >
+          <a href="#experiencia" class="hover:text-white transition-colors"
+            >Experiencia</a
+          >
+          <a href="#proyectos" class="hover:text-white transition-colors"
+            >Proyectos</a
+          >
+          <a href="#sobre-mi" class="hover:text-white transition-colors"
+            >Sobre mí</a
+          >
+        </div>
+        <a
+          href="#contacto"
+          class="bg-white text-black px-4 py-2 rounded-full text-xs font-bold hover:bg-blue-500 hover:text-white transition-all shadow-lg shadow-white/5"
+        >
+          Contacto
+        </a>
+      </div>
     </nav>
 
-    <section id="inicio" class="h-screen flex flex-col items-center justify-center text-center px-6">
-    <span class="text-blue-500 font-bold tracking-widest text-xs mb-4 uppercase animate-pulse">Software Developer</span>
-    <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-6">Sergio Pastor</h1>
-    <p class="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed">
-        Especializado en el desarrollo de aplicaciones multiplataforma con <span class="text-white font-semibold">Kotlin, Android, Python y React.</span>
-    </p>
-    
-    <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a href="#proyectos"
-            class="group bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-2xl font-bold transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40 hover:-translate-y-1 flex items-center gap-2">
-            Ver Proyectos
+    <section
+      id="inicio"
+      class="h-screen flex flex-col items-center justify-center text-center px-6"
+    >
+      <span
+        class="text-blue-500 font-bold tracking-widest text-xs mb-4 uppercase animate-pulse"
+        >Software Developer</span
+      >
+      <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-6">
+        Sergio Pastor
+      </h1>
+      <p class="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed">
+        Especializado en el desarrollo de aplicaciones multiplataforma con
+        <span class="text-white font-semibold"
+          >Kotlin, Android, Python y React.</span
+        >
+      </p>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a
+          href="#proyectos"
+          class="group bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-2xl font-bold transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40 hover:-translate-y-1 flex items-center gap-2"
+        >
+          Ver Proyectos
         </a>
 
-        <a href="#experiencia"
-            class="border border-white/10 hover:border-white/20 hover:bg-white/5 text-white px-8 py-3 rounded-2xl font-bold transition-all hover:-translate-y-1">
-            Mi Experiencia
+        <a
+          href="#experiencia"
+          class="border border-white/10 hover:border-white/20 hover:bg-white/5 text-white px-8 py-3 rounded-2xl font-bold transition-all hover:-translate-y-1"
+        >
+          Mi Experiencia
         </a>
-    </div>
-</section>
+      </div>
+    </section>
     <section id="experiencia" class="max-w-6xl mx-auto py-24 px-6">
-        <span class="section-title">Trayectoria Profesional</span>
-        <div class="bento-grid">
-
-            <div class="glass-card col-span-4 lg:col-span-2 flex flex-col h-full">
-            <div class="flex justify-between items-start mb-2">
-                    <h3 class="text-xl font-bold">Bodytone</h3>
-                    <span class="text-xs text-gray-500">Enero 2025 - Septiembre 2025</span>
-                </div>
-                <p class="text-blue-400 text-sm font-medium mb-3">Auxiliar Quality Assurance</p>
-                <ul class="text-gray-400 text-sm leading-relaxed space-y-3 flex-grow">
-                    <li class="flex items-start">
-                        <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
-                        <span>Ejecuté pruebas de usuario para garantizar la calidad y funcionalidad de las aplicaciones
-                            desarrolladas, identificando y documentando errores para su resolución.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
-                        <span>Colaboré en el ciclo de desarrollo de nuevas máquinas.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
-                        <span>Creé y mantuve documentación técnica detallada para productos y aplicaciones.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
-                        <span>Desarrollé una aplicación de escritorio completa (CRUD) en Python para la gestión interna
-                            de fichas técnicas de productos, utilizando MongoDB Atlas y Cloudinary.</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="glass-card col-span-4 lg:col-span-2 flex flex-col h-full">
-                <div class="flex justify-between items-start mb-2">
-                    <h3 class="text-xl font-bold">Vending Servicios Plus</h3>
-                    <span class="text-xs text-gray-500">Abril 2024 - Junio 2024</span>
-                </div>
-                <p class="text-blue-400 text-sm font-medium mb-3">Desarrollador Android</p>
-                <ul class="text-gray-400 text-sm leading-relaxed space-y-3 flex-grow">
-                    <li class="flex items-start">
-                        <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
-                        <span>Participé activamente en reuniones directas con el cliente para definir los requisitos y
-                            objetivos del software.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
-                        <span>Diseñé y creé la arquitectura de la base de datos para el soporte del sistema de
-                            vending.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
-                        <span>Me centré principalmente en el desarrollo del **Front-end**, implementando interfaces
-                            intuitivas y funcionales para la gestión y automatización de las máquinas.</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="glass-card col-span-4 bg-blue-500/5 border-blue-500/20">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <div>
-                    <h3 class="text-xl font-bold mb-1 text-blue-400">Educación Técnica</h3>
-                    <p class="text-sm text-white/80">I.E.S Espeñetas — Desarrollo de Aplicaciones Multiplataforma (DAM)</p>
-                </div>
-                <div class="bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
-                    <p class="text-xs text-blue-300 font-mono">2022 - 2024</p>
-                </div>
-            </div>
+      <span class="section-title">Trayectoria Profesional</span>
+      <div class="bento-grid">
+        <div class="glass-card col-span-4 lg:col-span-2 flex flex-col h-full">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold">Bodytone</h3>
+            <span class="text-xs text-gray-500"
+              >Enero 2025 - Septiembre 2025</span
+            >
+          </div>
+          <p class="text-blue-400 text-sm font-medium mb-3">
+            Auxiliar Quality Assurance
+          </p>
+          <ul class="text-gray-400 text-sm leading-relaxed space-y-3 flex-grow">
+            <li class="flex items-start">
+              <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
+              <span
+                >Ejecuté pruebas de usuario para garantizar la calidad y
+                funcionalidad de las aplicaciones desarrolladas, identificando y
+                documentando errores para su resolución.</span
+              >
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
+              <span
+                >Colaboré en el ciclo de desarrollo de nuevas máquinas.</span
+              >
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
+              <span
+                >Creé y mantuve documentación técnica detallada para productos y
+                aplicaciones.</span
+              >
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
+              <span
+                >Desarrollé una aplicación de escritorio completa (CRUD) en
+                Python para la gestión interna de fichas técnicas de productos,
+                utilizando MongoDB Atlas y Cloudinary.</span
+              >
+            </li>
+          </ul>
         </div>
+
+        <div class="glass-card col-span-4 lg:col-span-2 flex flex-col h-full">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold">Vending Servicios Plus</h3>
+            <span class="text-xs text-gray-500">Abril 2024 - Junio 2024</span>
+          </div>
+          <p class="text-blue-400 text-sm font-medium mb-3">
+            Desarrollador Android
+          </p>
+          <ul class="text-gray-400 text-sm leading-relaxed space-y-3 flex-grow">
+            <li class="flex items-start">
+              <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
+              <span
+                >Participé activamente en reuniones directas con el cliente para
+                definir los requisitos y objetivos del software.</span
+              >
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
+              <span
+                >Diseñé y creé la arquitectura de la base de datos para el
+                soporte del sistema de vending.</span
+              >
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2 text-blue-500 shrink-0">&bull;</span>
+              <span
+                >Me centré principalmente en el desarrollo del **Front-end**,
+                implementando interfaces intuitivas y funcionales para la
+                gestión y automatización de las máquinas.</span
+              >
+            </li>
+          </ul>
         </div>
+
+        <div class="glass-card col-span-4 bg-blue-500/5 border-blue-500/20">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-4"
+          >
+            <div>
+              <h3 class="text-xl font-bold mb-1 text-blue-400">
+                Educación Técnica
+              </h3>
+              <p class="text-sm text-white/80">
+                I.E.S Espeñetas — Desarrollo de Aplicaciones Multiplataforma
+                (DAM)
+              </p>
+            </div>
+            <div
+              class="bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20"
+            >
+              <p class="text-xs text-blue-300 font-mono">2022 - 2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-   <section id="proyectos" class="max-w-6xl mx-auto py-24 px-6">
-    <span class="section-title">Proyectos Destacados</span>
-    <div class="bento-grid">
+    <section id="proyectos" class="max-w-6xl mx-auto py-24 px-6">
+      <span class="section-title">Proyectos Destacados</span>
+      <div class="bento-grid">
+        <div
+          class="glass-card col-span-4 lg:col-span-2 group cursor-pointer hover:border-blue-500/50 transition-all h-full"
+          onclick="openModal('modal-fitness')"
+        >
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-2xl font-bold">Fitness Launcher</h3>
+            <i
+              data-lucide="maximize-2"
+              class="text-gray-500 group-hover:text-blue-400 transition-colors"
+            ></i>
+          </div>
 
-        <div class="glass-card col-span-4 lg:col-span-2 group cursor-pointer hover:border-blue-500/50 transition-all h-full"
-            onclick="openModal('modal-fitness')">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-2xl font-bold">Fitness Launcher</h3>
-                <i data-lucide="maximize-2" class="text-gray-500 group-hover:text-blue-400 transition-colors"></i>
+          <p class="text-gray-400 text-sm mb-4">
+            Launcher Android especializado con conexión Bluetooth FTMS.
+          </p>
+
+          <div
+            class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative"
+          >
+            <img
+              src="captura-fitness.jpg"
+              alt="Preview Fitness App"
+              class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+            />
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div
+                class="bg-blue-500/20 p-3 rounded-full backdrop-blur-sm border border-blue-500/30 group-hover:bg-blue-500 group-hover:text-white transition-all"
+              >
+                <i
+                  data-lucide="play"
+                  class="text-blue-400 group-hover:text-white"
+                  size="24"
+                ></i>
+              </div>
             </div>
+          </div>
 
-            <p class="text-gray-400 text-sm mb-4">Launcher Android especializado con conexión Bluetooth FTMS.</p>
-
-            <div class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative">
-                <img src="captura-fitness.jpg" alt="Preview Fitness App"
-                    class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div
-                        class="bg-blue-500/20 p-3 rounded-full backdrop-blur-sm border border-blue-500/30 group-hover:bg-blue-500 group-hover:text-white transition-all">
-                        <i data-lucide="play" class="text-blue-400 group-hover:text-white" size="24"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap gap-2 mt-auto">
-                <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Kotlin</span>
-                <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">BLE</span>
-                <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Android</span>
-                <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Jetpack Compose</span>
-            </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span
+              class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded"
+              >Kotlin</span
+            >
+            <span
+              class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded"
+              >BLE</span
+            >
+            <span
+              class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded"
+              >Android</span
+            >
+            <span
+              class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded"
+              >Jetpack Compose</span
+            >
+          </div>
         </div>
 
-        <div class="glass-card col-span-4 lg:col-span-2 group cursor-pointer hover:border-green-500/50 transition-all h-full"
-            onclick="openModal('modal-techspecs')">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-2xl font-bold">TechSpecs DB</h3>
-                <i data-lucide="maximize-2" class="text-gray-500 group-hover:text-green-400 transition-colors"></i>
-            </div>
+        <div
+          class="glass-card col-span-4 lg:col-span-2 group cursor-pointer hover:border-green-500/50 transition-all h-full"
+          onclick="openModal('modal-techspecs')"
+        >
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-2xl font-bold">TechSpecs DB</h3>
+            <i
+              data-lucide="maximize-2"
+              class="text-gray-500 group-hover:text-green-400 transition-colors"
+            ></i>
+          </div>
 
-            <p class="text-gray-400 text-sm mb-4">Gestión CRUD de fichas técnicas con MongoDB Atlas y Cloudinary.</p>
+          <p class="text-gray-400 text-sm mb-4">
+            Gestión CRUD de fichas técnicas con MongoDB Atlas y Cloudinary.
+          </p>
 
-            <div class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative">
-                <img src="captura-db.jpg" alt="Preview TechSpecs DB"
-                    class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div
-                        class="bg-green-500/20 p-3 rounded-full backdrop-blur-sm border border-green-500/30 group-hover:bg-green-500 group-hover:text-white transition-all">
-                        <i data-lucide="play" class="text-green-400 group-hover:text-white" size="24"></i>
-                    </div>
-                </div>
+          <div
+            class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative"
+          >
+            <img
+              src="captura-db.jpg"
+              alt="Preview TechSpecs DB"
+              class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+            />
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div
+                class="bg-green-500/20 p-3 rounded-full backdrop-blur-sm border border-green-500/30 group-hover:bg-green-500 group-hover:text-white transition-all"
+              >
+                <i
+                  data-lucide="play"
+                  class="text-green-400 group-hover:text-white"
+                  size="24"
+                ></i>
+              </div>
             </div>
+          </div>
 
-            <div class="flex flex-wrap gap-2 mt-auto">
-                <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">Python</span>
-                <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">MongoDB Atlas</span>
-                <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">Cloudinary</span>
-                <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">Tkinter</span>
-            </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span
+              class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded"
+              >Python</span
+            >
+            <span
+              class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded"
+              >MongoDB Atlas</span
+            >
+            <span
+              class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded"
+              >Cloudinary</span
+            >
+            <span
+              class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded"
+              >Tkinter</span
+            >
+          </div>
         </div>
 
-        <div class="glass-card col-span-4 group cursor-pointer hover:border-orange-500/50 transition-all"
-            onclick="openModal('modal-vending')">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-2xl font-bold">Vending Automation</h3>
-                <i data-lucide="maximize-2" class="text-gray-500 group-hover:text-orange-400 transition-colors"></i>
-            </div>
+        <div
+          class="glass-card col-span-4 group cursor-pointer hover:border-orange-500/50 transition-all"
+          onclick="openModal('modal-vending')"
+        >
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-2xl font-bold">Vending Automation</h3>
+            <i
+              data-lucide="maximize-2"
+              class="text-gray-500 group-hover:text-orange-400 transition-colors"
+            ></i>
+          </div>
 
-            <p class="text-gray-400 text-sm mb-4">Sistema de gestión y automatización de procesos para máquinas
-                expendedoras con Java y Android.</p>
+          <p class="text-gray-400 text-sm mb-4">
+            Sistema de gestión y automatización de procesos para máquinas
+            expendedoras con Java y Android.
+          </p>
 
-            <div class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative">
-                <img src="captura-vending.jpg" alt="Preview Vending App"
-                    class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div
-                        class="bg-orange-500/20 p-3 rounded-full backdrop-blur-sm border border-orange-500/30 group-hover:bg-orange-500 group-hover:text-white transition-all">
-                        <i data-lucide="play" class="text-orange-400 group-hover:text-white" size="24"></i>
-                    </div>
-                </div>
+          <div
+            class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative"
+          >
+            <img
+              src="captura-vending.jpg"
+              alt="Preview Vending App"
+              class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+            />
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div
+                class="bg-orange-500/20 p-3 rounded-full backdrop-blur-sm border border-orange-500/30 group-hover:bg-orange-500 group-hover:text-white transition-all"
+              >
+                <i
+                  data-lucide="play"
+                  class="text-orange-400 group-hover:text-white"
+                  size="24"
+                ></i>
+              </div>
             </div>
+          </div>
 
-            <div class="flex flex-wrap gap-2 mt-auto">
-                <span
-                    class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">Java</span>
-                <span
-                    class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">Android
-                    SDK</span>
-                <span
-                    class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">UI/UX
-                    Design</span>
-                <span
-                    class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">SQLite</span>
-            </div>
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span
+              class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20"
+              >Java</span
+            >
+            <span
+              class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20"
+              >Android SDK</span
+            >
+            <span
+              class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20"
+              >UI/UX Design</span
+            >
+            <span
+              class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20"
+              >SQLite</span
+            >
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-</section>
+    <section
+      id="sobre-mi"
+      class="max-w-6xl mx-auto py-24 px-6 border-t border-white/5"
+    >
+      <span class="section-title">Conóceme</span>
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <div class="relative group">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
+          ></div>
 
-    <section id="sobre-mi" class="max-w-6xl mx-auto py-24 px-6 border-t border-white/5">
-             <span class="section-title">Conóceme</span>
-    <div class="flex flex-col md:flex-row gap-12 items-center">
-        
-       <div class="relative group">
-            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-            
-            <img src="foto-perfil.jpg" class="relative w-64 h-64 object-cover rounded-2xl shadow-2xl transition-all duration-500" alt="Sergio Pastor" />
+          <img
+            src="foto-perfil.jpg"
+            class="relative w-64 h-64 object-cover rounded-2xl shadow-2xl transition-all duration-500"
+            alt="Sergio Pastor"
+          />
         </div>
 
         <div class="flex-1">
-            <h3 class="text-3xl font-bold mb-6 text-white">Sobre mí</h3>
-            
-            <p class="text-gray-400 leading-relaxed mb-6 text-lg">
-                Desarrollador de software con experiencia en la creación de aplicaciones nativas mediante <span class="text-white font-semibold">Kotlin y Java</span>, así como en el desarrollo de herramientas de backend con <span class="text-white font-semibold">Python</span>. Me enfoco en escribir código limpio y eficiente.
-            </p>
-            
-            <p class="text-gray-400 leading-relaxed mb-8">
-                Actualmente, estoy expandiendo mis capacidades hacia el desarrollo moderno con <span class="text-cyan-400 font-semibold">React</span>, con el objetivo de consolidar un perfil Full Stack y abordar proyectos de mayor complejidad técnica.
-            </p>
+          <h3 class="text-3xl font-bold mb-6 text-white">Sobre mí</h3>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                
-                <div class="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:border-blue-500/30 transition-colors">
-                    <i data-lucide="smartphone" class="text-blue-500"></i>
-                    <span>Android Dev</span>
-                </div>
-                
-                <div class="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:border-green-500/30 transition-colors">
-                    <i data-lucide="code" class="text-green-500"></i>
-                    <span>Python & Data</span>
-                </div>
-                
-                <div class="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:border-cyan-500/30 transition-colors">
-                    <i data-lucide="atom" class="text-cyan-400"></i>
-                    <span>React.js</span>
-                </div>
+          <p class="text-gray-400 leading-relaxed mb-6 text-lg">
+            Desarrollador de software con experiencia en la creación de
+            aplicaciones nativas mediante
+            <span class="text-white font-semibold">Kotlin y Java</span>, así
+            como en el desarrollo de herramientas de backend con
+            <span class="text-white font-semibold">Python</span>. Me enfoco en
+            escribir código limpio y eficiente.
+          </p>
 
-                <div class="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:border-orange-500/30 transition-colors">
-                    <i data-lucide="git-branch" class="text-orange-500"></i>
-                    <span>Git & GitHub</span>
-                </div>
+          <p class="text-gray-400 leading-relaxed mb-8">
+            Actualmente, estoy expandiendo mis capacidades hacia el desarrollo
+            moderno con <span class="text-cyan-400 font-semibold">React</span>,
+            con el objetivo de consolidar un perfil Full Stack y abordar
+            proyectos de mayor complejidad técnica.
+          </p>
 
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div
+              class="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:border-blue-500/30 transition-colors"
+            >
+              <i data-lucide="smartphone" class="text-blue-500"></i>
+              <span>Android Dev</span>
             </div>
-        </div>
-    </div>
-</section>
 
-  <footer id="contacto" class="py-24 border-t border-white/5 bg-black/50 relative">
-    
-    <div id="toast-copy" class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-2xl transform translate-y-20 opacity-0 transition-all duration-500 z-50 flex items-center gap-2 font-medium pointer-events-none">
+            <div
+              class="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:border-green-500/30 transition-colors"
+            >
+              <i data-lucide="code" class="text-green-500"></i>
+              <span>Python & Data</span>
+            </div>
+
+            <div
+              class="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:border-cyan-500/30 transition-colors"
+            >
+              <i data-lucide="atom" class="text-cyan-400"></i>
+              <span>React.js</span>
+            </div>
+
+            <div
+              class="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:border-orange-500/30 transition-colors"
+            >
+              <i data-lucide="git-branch" class="text-orange-500"></i>
+              <span>Git & GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      id="contacto"
+      class="py-24 border-t border-white/5 bg-black/50 relative"
+    >
+      <div
+        id="toast-copy"
+        class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-2xl transform translate-y-20 opacity-0 transition-all duration-500 z-50 flex items-center gap-2 font-medium pointer-events-none"
+      >
         <i data-lucide="check-circle" size="20"></i>
         ¡Email copiado!
-    </div>
+      </div>
 
-    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="max-w-4xl mx-auto px-6 text-center">
         <h2 class="text-3xl font-bold mb-6">¿Hablamos?</h2>
         <p class="text-gray-400 mb-10 max-w-xl mx-auto">
-            Actualmente estoy abierto a nuevas oportunidades. Si tienes un proyecto o vacante, contáctame.
+          Actualmente estoy abierto a nuevas oportunidades. Si tienes un
+          proyecto o vacante, contáctame.
         </p>
 
         <div class="flex justify-center gap-6 mb-8">
-            <button onclick="copyEmail()" class="p-4 bg-white/5 rounded-2xl hover:bg-blue-600/20 hover:scale-110 hover:border-blue-500/50 border border-white/10 transition-all group" title="Copiar Email">
-                <i data-lucide="mail" class="text-gray-400 group-hover:text-blue-500 transition-colors" size="24"></i>
-            </button>
-            
-            <a href="https://linkedin.com/in/sergio-pastor-castellón-507b82265/" target="_blank" class="p-4 bg-white/5 rounded-2xl hover:bg-blue-600/20 hover:scale-110 hover:border-blue-500/50 border border-white/10 transition-all group" title="LinkedIn">
-                <i data-lucide="linkedin" class="text-gray-400 group-hover:text-blue-500 transition-colors" size="24"></i>
-            </a>
+          <button
+            onclick="copyEmail()"
+            class="p-4 bg-white/5 rounded-2xl hover:bg-blue-600/20 hover:scale-110 hover:border-blue-500/50 border border-white/10 transition-all group"
+            title="Copiar Email"
+          >
+            <i
+              data-lucide="mail"
+              class="text-gray-400 group-hover:text-blue-500 transition-colors"
+              size="24"
+            ></i>
+          </button>
 
-            <a href="https://github.com/sergiopas97" target="_blank" class="p-4 bg-white/5 rounded-2xl hover:bg-blue-600/20 hover:scale-110 hover:border-blue-500/50 border border-white/10 transition-all group" title="GitHub">
-                <i data-lucide="github" class="text-gray-400 group-hover:text-blue-500 transition-colors" size="24"></i>
-            </a>
+          <a
+            href="https://linkedin.com/in/sergio-pastor-castellón-507b82265/"
+            target="_blank"
+            class="p-4 bg-white/5 rounded-2xl hover:bg-blue-600/20 hover:scale-110 hover:border-blue-500/50 border border-white/10 transition-all group"
+            title="LinkedIn"
+          >
+            <i
+              data-lucide="linkedin"
+              class="text-gray-400 group-hover:text-blue-500 transition-colors"
+              size="24"
+            ></i>
+          </a>
+
+          <a
+            href="https://github.com/sergiopas97"
+            target="_blank"
+            class="p-4 bg-white/5 rounded-2xl hover:bg-blue-600/20 hover:scale-110 hover:border-blue-500/50 border border-white/10 transition-all group"
+            title="GitHub"
+          >
+            <i
+              data-lucide="github"
+              class="text-gray-400 group-hover:text-blue-500 transition-colors"
+              size="24"
+            ></i>
+          </a>
         </div>
 
         <div class="mb-12">
-            <a href="cv-sergio-pastor.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600/10 text-blue-400 hover:bg-blue-600 hover:text-white transition-all border border-blue-500/20 text-sm font-semibold">
-                <i data-lucide="download" size="16"></i>
-                Descargar Currículum
-            </a>
+          <a
+            href="cv-sergio-pastor.pdf"
+            target="_blank"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600/10 text-blue-400 hover:bg-blue-600 hover:text-white transition-all border border-blue-500/20 text-sm font-semibold"
+          >
+            <i data-lucide="download" size="16"></i>
+            Descargar Currículum
+          </a>
         </div>
 
-        <p class="text-gray-600 text-sm">© 2025 Sergio Pastor | Murcia, España</p>
-    </div>
-</footer>
+        <p class="text-gray-600 text-sm">
+          © 2025 Sergio Pastor | Murcia, España
+        </p>
+      </div>
+    </footer>
 
-    <div id="modal-fitness"
-        class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+    <div
+      id="modal-fitness"
+      class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+    >
+      <div
+        class="bg-[#0a0a0a] border border-white/10 rounded-3xl max-w-5xl w-full p-6 overflow-hidden relative shadow-2xl animate-in fade-in zoom-in duration-300"
+      >
+        <button
+          onclick="closeModal('modal-fitness')"
+          class="absolute top-4 right-4 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10"
+        >
+          <i data-lucide="x" class="text-white"></i>
+        </button>
+        <h3 class="text-2xl font-bold mb-6 text-blue-500">
+          Fitness Launcher Demo
+        </h3>
+
         <div
-            class="bg-[#0a0a0a] border border-white/10 rounded-3xl max-w-5xl w-full p-6 overflow-hidden relative shadow-2xl animate-in fade-in zoom-in duration-300">
-            <button onclick="closeModal('modal-fitness')"
-                class="absolute top-4 right-4 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10">
-                <i data-lucide="x" class="text-white"></i>
-            </button>
-            <h3 class="text-2xl font-bold mb-6 text-blue-500">Fitness Launcher Demo</h3>
-
-            <div
-                class="aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(59,130,246,0.2)]">
-                <div
-                    class="aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(59,130,246,0.2)]">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/3PEydPA3cLQ"
-                        title="Fitness Launcher Demo" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-            <p class="text-gray-400 mt-4 text-sm">Demostración en tiempo real de la conexión BLE.</p>
+          class="aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(59,130,246,0.2)]"
+        >
+          <div
+            class="aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(59,130,246,0.2)]"
+          >
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/3PEydPA3cLQ"
+              title="Fitness Launcher Demo"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
         </div>
-    </div>
-
-    <div id="modal-techspecs"
-        class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
-        <div
-            class="bg-[#0a0a0a] border border-white/10 rounded-3xl max-w-5xl w-full p-6 overflow-hidden relative shadow-2xl animate-in fade-in zoom-in duration-300">
-
-            <button onclick="closeModal('modal-techspecs')"
-                class="absolute top-4 right-4 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10">
-                <i data-lucide="x" class="text-white"></i>
-            </button>
-
-            <h3 class="text-2xl font-bold mb-6 text-green-500">TechSpecs DB Demo</h3>
-
-            <div
-                class="aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(34,197,94,0.2)]">
-                <iframe class="w-full h-full" src="https://www.youtube.com/embed/LX3tZvWocW8" title="TechSpecs DB Demo"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <div class="mt-6 text-gray-300 text-sm">
-                <p class="leading-relaxed mb-4">
-                    Aplicación de escritorio desarrollada en Python para centralizar la gestión de maquinaria.
-                    Implementa un sistema MongoDB para mayor flexibilidad en los datos técnicos.
-                </p>
-                <ul class="flex gap-4">
-                    <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-green-500"></i>
-                        Almacenamiento en la nube (Cloudinary)</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-green-500"></i>
-                        Base de datos remota (Atlas)</li>
-                </ul>
-            </div>
-        </div>
+        <p class="text-gray-400 mt-4 text-sm">
+          Demostración en tiempo real de la conexión BLE.
+        </p>
+      </div>
     </div>
 
-    <div id="modal-vending"
-        class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
+    <div
+      id="modal-techspecs"
+      class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+    >
+      <div
+        class="bg-[#0a0a0a] border border-white/10 rounded-3xl max-w-5xl w-full p-6 overflow-hidden relative shadow-2xl animate-in fade-in zoom-in duration-300"
+      >
+        <button
+          onclick="closeModal('modal-techspecs')"
+          class="absolute top-4 right-4 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10"
+        >
+          <i data-lucide="x" class="text-white"></i>
+        </button>
+
+        <h3 class="text-2xl font-bold mb-6 text-green-500">
+          TechSpecs DB Demo
+        </h3>
+
         <div
-            class="bg-[#0a0a0a] border border-white/10 rounded-3xl max-w-5xl w-full p-6 overflow-hidden relative shadow-2xl animate-in fade-in zoom-in duration-300">
-
-            <button onclick="closeModal('modal-vending')"
-                class="absolute top-4 right-4 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10">
-                <i data-lucide="x" class="text-white"></i>
-            </button>
-
-            <h3 class="text-2xl font-bold mb-6 text-orange-500">Vending Automation Demo</h3>
-
-            <div
-                class="aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(249,115,22,0.2)]">
-                <iframe class="w-full h-full" src="https://www.youtube.com/embed/SoxtQuScrRg"
-                    title="Vending Automation Demo" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <div class="mt-6 text-gray-300 text-sm">
-                <p class="leading-relaxed mb-4">
-                    Desarrollo centrado en la optimización de procesos de venta automática. Incluye gestión de stock en
-                    tiempo real y una interfaz adaptada para terminales industriales.
-                </p>
-                <ul class="flex flex-wrap gap-4">
-                    <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-orange-500"></i>
-                        Toma de requisitos con cliente</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-orange-500"></i>
-                        Diseño de Front-end intuitivo</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-orange-500"></i>
-                        Arquitectura de Base de Datos</li>
-                </ul>
-            </div>
+          class="aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(34,197,94,0.2)]"
+        >
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/LX3tZvWocW8"
+            title="TechSpecs DB Demo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
         </div>
+
+        <div class="mt-6 text-gray-300 text-sm">
+          <p class="leading-relaxed mb-4">
+            Aplicación de escritorio desarrollada en Python para centralizar la
+            gestión de maquinaria. Implementa un sistema MongoDB para mayor
+            flexibilidad en los datos técnicos.
+          </p>
+          <ul class="flex gap-4">
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" size="14" class="text-green-500"></i>
+              Almacenamiento en la nube (Cloudinary)
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" size="14" class="text-green-500"></i> Base
+              de datos remota (Atlas)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="modal-vending"
+      class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+    >
+      <div
+        class="bg-[#0a0a0a] border border-white/10 rounded-3xl max-w-5xl w-full p-6 overflow-hidden relative shadow-2xl animate-in fade-in zoom-in duration-300"
+      >
+        <button
+          onclick="closeModal('modal-vending')"
+          class="absolute top-4 right-4 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors z-10"
+        >
+          <i data-lucide="x" class="text-white"></i>
+        </button>
+
+        <h3 class="text-2xl font-bold mb-6 text-orange-500">
+          Vending Automation Demo
+        </h3>
+
+        <div
+          class="aspect-video bg-black rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(249,115,22,0.2)]"
+        >
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/SoxtQuScrRg"
+            title="Vending Automation Demo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+
+        <div class="mt-6 text-gray-300 text-sm">
+          <p class="leading-relaxed mb-4">
+            Desarrollo centrado en la optimización de procesos de venta
+            automática. Incluye gestión de stock en tiempo real y una interfaz
+            adaptada para terminales industriales.
+          </p>
+          <ul class="flex flex-wrap gap-4">
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" size="14" class="text-orange-500"></i> Toma
+              de requisitos con cliente
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" size="14" class="text-orange-500"></i>
+              Diseño de Front-end intuitivo
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="check" size="14" class="text-orange-500"></i>
+              Arquitectura de Base de Datos
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-        lucide.createIcons();
+      lucide.createIcons();
 
-        document.querySelectorAll(".glass-card").forEach((card) => {
-            card.addEventListener("mousemove", (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = ((e.clientX - rect.left) / card.clientWidth) * 100;
-                const y = ((e.clientY - rect.top) / card.clientHeight) * 100;
-                card.style.setProperty("--x", `${x}%`);
-                card.style.setProperty("--y", `${y}%`);
-            });
+      document.querySelectorAll(".glass-card").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          // Calculamos la posición exacta del cursor dentro de la tarjeta
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          // Pasamos los píxeles directamente a las variables CSS
+          card.style.setProperty("--x", `${x}px`);
+          card.style.setProperty("--y", `${y}px`);
         });
+      });
 
-        // NUEVAS FUNCIONES PARA EL MODAL
-        function openModal(id) {
-            const modal = document.getElementById(id);
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
+      // NUEVAS FUNCIONES PARA EL MODAL
+      function openModal(id) {
+        const modal = document.getElementById(id);
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        document.body.style.overflow = "hidden";
+      }
 
-        function closeModal(id) {
-            const modal = document.getElementById(id);
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-            document.body.style.overflow = 'auto';
-        }
+      function closeModal(id) {
+        const modal = document.getElementById(id);
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+        document.body.style.overflow = "auto";
+      }
 
-        window.onclick = function (event) {
-            const modalFitness = document.getElementById('modal-fitness');
-            const modalTech = document.getElementById('modal-techspecs');
-            const modalVending = document.getElementById('modal-vending'); // Nuevo
+      window.onclick = function (event) {
+        const modalFitness = document.getElementById("modal-fitness");
+        const modalTech = document.getElementById("modal-techspecs");
+        const modalVending = document.getElementById("modal-vending"); // Nuevo
 
-            if (event.target == modalFitness) closeModal('modal-fitness');
-            if (event.target == modalTech) closeModal('modal-techspecs');
-            if (event.target == modalVending) closeModal('modal-vending'); // Nuevo
-        }
+        if (event.target == modalFitness) closeModal("modal-fitness");
+        if (event.target == modalTech) closeModal("modal-techspecs");
+        if (event.target == modalVending) closeModal("modal-vending"); // Nuevo
+      };
 
-function copyEmail() {
-    const email = "sergio041997@gmail.com";
-    
-    // Copiar al portapapeles
-    navigator.clipboard.writeText(email).then(() => {
-        
-        // Mostrar el mensaje de "Copiado"
-        const toast = document.getElementById('toast-copy');
-        toast.classList.remove('translate-y-20', 'opacity-0');
-        
-        // Ocultar el mensaje a los 3 segundos
-        setTimeout(() => {
-            toast.classList.add('translate-y-20', 'opacity-0');
-        }, 3000);
-    });
-}
+      function copyEmail() {
+        const email = "sergio041997@gmail.com";
+
+        // Copiar al portapapeles
+        navigator.clipboard.writeText(email).then(() => {
+          // Mostrar el mensaje de "Copiado"
+          const toast = document.getElementById("toast-copy");
+          toast.classList.remove("translate-y-20", "opacity-0");
+
+          // Ocultar el mensaje a los 3 segundos
+          setTimeout(() => {
+            toast.classList.add("translate-y-20", "opacity-0");
+          }, 3000);
+        });
+      }
     </script>
-</body>
-
+  </body>
 </html>
