@@ -85,7 +85,7 @@
     <nav class="fixed top-0 w-full z-50">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <img src="foto-sergio.jpg" alt="Sergio"
+                <img src="foto-perfil.jpg" alt="Sergio"
                     class="w-8 h-8 rounded-full border border-blue-500/50 object-cover" />
                 <span class="font-extrabold tracking-tighter text-xl">SP<span class="text-blue-500">.</span></span>
             </div>
@@ -95,8 +95,9 @@
                 <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a>
                 <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre mí</a>
             </div>
-            <a href="mailto:sergio041997@gmail.com"
-                class="bg-white text-black px-4 py-2 rounded-full text-xs font-bold hover:bg-blue-500 hover:text-white transition-all shadow-lg shadow-white/5">Contacto</a>
+                <a href="#contacto" class="bg-white text-black px-4 py-2 rounded-full text-xs font-bold hover:bg-blue-500 hover:text-white transition-all shadow-lg shadow-white/5">
+                    Contacto
+                </a>
         </div>
     </nav>
 
@@ -105,7 +106,7 @@
         <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-6">Sergio Pastor</h1>
         <p class="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed">
             Especializado en el desarrollo de aplicaciones multiplataforma con <span
-                class="text-white font-semibold">Kotlin, Android y Python.</span>
+                class="text-white font-semibold">Kotlin, Android, Python y React.</span>
         </p>
         <div class="mt-10 flex flex-wrap justify-center gap-4">
             <a href="#proyectos"
@@ -121,8 +122,8 @@
         <span class="section-title">Trayectoria Profesional</span>
         <div class="bento-grid">
 
-            <div class="glass-card col-span-2">
-                <div class="flex justify-between items-start mb-2">
+            <div class="glass-card col-span-4 lg:col-span-2 flex flex-col h-full">
+            <div class="flex justify-between items-start mb-2">
                     <h3 class="text-xl font-bold">Bodytone</h3>
                     <span class="text-xs text-gray-500">Enero 2025 - Septiembre 2025</span>
                 </div>
@@ -149,7 +150,7 @@
                 </ul>
             </div>
 
-            <div class="glass-card col-span-2">
+            <div class="glass-card col-span-4 lg:col-span-2 flex flex-col h-full">
                 <div class="flex justify-between items-start mb-2">
                     <h3 class="text-xl font-bold">Vending Servicios Plus</h3>
                     <span class="text-xs text-gray-500">Abril 2024 - Junio 2024</span>
@@ -175,157 +176,202 @@
             </div>
 
             <div class="glass-card col-span-4 bg-blue-500/5 border-blue-500/20">
-                <h3 class="text-xl font-bold mb-2 text-blue-400">Educación Técnica</h3>
-                <p class="text-sm text-white/80">I.E.S Espeñetas — Desarrollo de Aplicaciones Multiplataforma (DAM)</p>
-                <p class="text-xs text-gray-400 mt-2 italic">2022 - 2024</p>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div>
+                    <h3 class="text-xl font-bold mb-1 text-blue-400">Educación Técnica</h3>
+                    <p class="text-sm text-white/80">I.E.S Espeñetas — Desarrollo de Aplicaciones Multiplataforma (DAM)</p>
+                </div>
+                <div class="bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
+                    <p class="text-xs text-blue-300 font-mono">2022 - 2024</p>
+                </div>
             </div>
+        </div>
         </div>
     </section>
 
-    <section id="proyectos" class="max-w-6xl mx-auto py-24 px-6">
-        <span class="section-title">Proyectos Destacados</span>
-        <div class="bento-grid">
+   <section id="proyectos" class="max-w-6xl mx-auto py-24 px-6">
+    <span class="section-title">Proyectos Destacados</span>
+    <div class="bento-grid">
 
-            <div class="glass-card col-span-2 group cursor-pointer hover:border-blue-500/50 transition-all"
-                onclick="openModal('modal-fitness')">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-2xl font-bold">Fitness Launcher</h3>
-                    <i data-lucide="maximize-2" class="text-gray-500 group-hover:text-blue-400 transition-colors"></i>
-                </div>
+        <div class="glass-card col-span-4 lg:col-span-2 group cursor-pointer hover:border-blue-500/50 transition-all h-full"
+            onclick="openModal('modal-fitness')">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold">Fitness Launcher</h3>
+                <i data-lucide="maximize-2" class="text-gray-500 group-hover:text-blue-400 transition-colors"></i>
+            </div>
 
-                <p class="text-gray-400 text-sm mb-4">Launcher Android especializado con conexión Bluetooth FTMS.</p>
+            <p class="text-gray-400 text-sm mb-4">Launcher Android especializado con conexión Bluetooth FTMS.</p>
 
-                <div class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative">
-                    <img src="tu-captura-fitness.jpg" alt="Preview Fitness App"
-                        class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div
-                            class="bg-blue-500/20 p-3 rounded-full backdrop-blur-sm border border-blue-500/30 group-hover:bg-blue-500 group-hover:text-white transition-all">
-                            <i data-lucide="play" class="text-blue-400 group-hover:text-white" size="24"></i>
-                        </div>
+            <div class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative">
+                <img src="captura-fitness.jpg" alt="Preview Fitness App"
+                    class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div
+                        class="bg-blue-500/20 p-3 rounded-full backdrop-blur-sm border border-blue-500/30 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                        <i data-lucide="play" class="text-blue-400 group-hover:text-white" size="24"></i>
                     </div>
-                </div>
-
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Kotlin</span>
-                    <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">BLE</span>
-                    <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Android</span>
-                    <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Jetpack Compose</span>
                 </div>
             </div>
 
-            <div class="glass-card col-span-2 group cursor-pointer hover:border-green-500/50 transition-all"
-                onclick="openModal('modal-techspecs')">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-2xl font-bold">TechSpecs DB</h3>
-                    <i data-lucide="maximize-2" class="text-gray-500 group-hover:text-green-400 transition-colors"></i>
-                </div>
-
-                <p class="text-gray-400 text-sm mb-4">Gestión CRUD de fichas técnicas con MongoDB Atlas y Cloudinary.
-                </p>
-
-                <div class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative">
-                    <img src="tu-captura-db.jpg" alt="Preview TechSpecs DB"
-                        class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div
-                            class="bg-green-500/20 p-3 rounded-full backdrop-blur-sm border border-green-500/30 group-hover:bg-green-500 group-hover:text-white transition-all">
-                            <i data-lucide="play" class="text-green-400 group-hover:text-white" size="24"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">Python</span>
-                    <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">MongoDB Atlas</span>
-                    <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">Cloudinary</span>
-                    <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">Tkinter</span>
-                </div>
+            <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Kotlin</span>
+                <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">BLE</span>
+                <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Android</span>
+                <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Jetpack Compose</span>
             </div>
-
-            <div class="glass-card col-span-2 md:col-span-4 group cursor-pointer hover:border-orange-500/50 transition-all"
-                onclick="openModal('modal-vending')">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-2xl font-bold">Vending Automation</h3>
-                    <i data-lucide="maximize-2" class="text-gray-500 group-hover:text-orange-400 transition-colors"></i>
-                </div>
-
-                <p class="text-gray-400 text-sm mb-4">Sistema de gestión y automatización de procesos para máquinas
-                    expendedoras con Java y Android.</p>
-
-                <div class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative">
-                    <img src="tu-captura-vending.jpg" alt="Preview Vending App"
-                        class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div
-                            class="bg-orange-500/20 p-3 rounded-full backdrop-blur-sm border border-orange-500/30 group-hover:bg-orange-500 group-hover:text-white transition-all">
-                            <i data-lucide="play" class="text-orange-400 group-hover:text-white" size="24"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    <span
-                        class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">Java</span>
-                    <span
-                        class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">Android
-                        SDK</span>
-                    <span
-                        class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">UI/UX
-                        Design</span>
-                    <span
-                        class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">SQLite</span>
-                </div>
-            </div>
-
         </div>
-    </section>
+
+        <div class="glass-card col-span-4 lg:col-span-2 group cursor-pointer hover:border-green-500/50 transition-all h-full"
+            onclick="openModal('modal-techspecs')">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold">TechSpecs DB</h3>
+                <i data-lucide="maximize-2" class="text-gray-500 group-hover:text-green-400 transition-colors"></i>
+            </div>
+
+            <p class="text-gray-400 text-sm mb-4">Gestión CRUD de fichas técnicas con MongoDB Atlas y Cloudinary.</p>
+
+            <div class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative">
+                <img src="captura-db.jpg" alt="Preview TechSpecs DB"
+                    class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div
+                        class="bg-green-500/20 p-3 rounded-full backdrop-blur-sm border border-green-500/30 group-hover:bg-green-500 group-hover:text-white transition-all">
+                        <i data-lucide="play" class="text-green-400 group-hover:text-white" size="24"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">Python</span>
+                <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">MongoDB Atlas</span>
+                <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">Cloudinary</span>
+                <span class="text-[10px] bg-green-500/10 text-green-400 px-2 py-1 rounded">Tkinter</span>
+            </div>
+        </div>
+
+        <div class="glass-card col-span-4 group cursor-pointer hover:border-orange-500/50 transition-all"
+            onclick="openModal('modal-vending')">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold">Vending Automation</h3>
+                <i data-lucide="maximize-2" class="text-gray-500 group-hover:text-orange-400 transition-colors"></i>
+            </div>
+
+            <p class="text-gray-400 text-sm mb-4">Sistema de gestión y automatización de procesos para máquinas
+                expendedoras con Java y Android.</p>
+
+            <div class="aspect-video bg-black/50 rounded-xl border border-white/10 mb-4 overflow-hidden relative">
+                <img src="captura-vending.jpg" alt="Preview Vending App"
+                    class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div
+                        class="bg-orange-500/20 p-3 rounded-full backdrop-blur-sm border border-orange-500/30 group-hover:bg-orange-500 group-hover:text-white transition-all">
+                        <i data-lucide="play" class="text-orange-400 group-hover:text-white" size="24"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mt-auto">
+                <span
+                    class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">Java</span>
+                <span
+                    class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">Android
+                    SDK</span>
+                <span
+                    class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">UI/UX
+                    Design</span>
+                <span
+                    class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-1 rounded border border-orange-500/20">SQLite</span>
+            </div>
+        </div>
+
+    </div>
+</section>
 
     <section id="sobre-mi" class="max-w-6xl mx-auto py-24 px-6 border-t border-white/5">
-        <span class="section-title">Conóceme</span>
-        <div class="flex flex-col md:flex-row gap-12 items-center">
-            <div class="w-64 h-64 shrink-0 relative group">
-                <div
-                    class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000">
-                </div>
-                <img src="foto-sergio.jpg" alt="Sergio Pastor"
-                    class="relative w-full h-full object-cover rounded-2xl border border-white/10 shadow-2xl" />
-            </div>
-            <div class="flex-1">
-                <h3 class="text-3xl font-bold mb-6 text-left">Sobre mí</h3>
-                <p class="text-gray-400 leading-relaxed mb-6 text-left">
-                    Soy un desarrollador con experiencia en Java, Kotlin y Python. Mi trayectoria incluye un pasado en
-                    electromecánica, lo que me otorga una capacidad resolutiva única para abordar problemas técnicos
-                    complejos, uniendo el hardware con soluciones de software eficientes.
-                </p>
-                <div class="grid grid-cols-2 gap-4 text-sm text-gray-300">
-                    <div class="flex items-center gap-2"><i data-lucide="users" size="16" class="text-blue-500"></i>
-                        Trabajo en equipo</div>
-                    <div class="flex items-center gap-2"><i data-lucide="zap" size="16" class="text-blue-500"></i>
-                        Resolutivo</div>
-                    <div class="flex items-center gap-2"><i data-lucide="palette" size="16" class="text-blue-500"></i>
-                        Creativo</div>
-                    <div class="flex items-center gap-2"><i data-lucide="car" size="16" class="text-blue-500"></i>
-                        Movilidad total</div>
-                </div>
-            </div>
+             <span class="section-title">Conóceme</span>
+    <div class="flex flex-col md:flex-row gap-12 items-center">
+        
+       <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            
+            <img src="foto-perfil.jpg" class="relative w-64 h-64 object-cover rounded-2xl shadow-2xl transition-all duration-500" alt="Sergio Pastor" />
         </div>
-    </section>
 
-    <footer id="contacto" class="py-24 text-center border-t border-white/5">
-        <h2 class="text-3xl font-bold mb-8">¿Hablamos?</h2>
-        <div class="flex justify-center gap-6">
-            <a href="mailto:sergio041997@gmail.com"
-                class="p-4 bg-white/5 rounded-2xl hover:bg-blue-500 transition-all group border border-white/5">
-                <i data-lucide="mail" class="group-hover:scale-110 transition-transform"></i>
+        <div class="flex-1">
+            <h3 class="text-3xl font-bold mb-6 text-white">Sobre mí</h3>
+            
+            <p class="text-gray-400 leading-relaxed mb-6 text-lg">
+                Desarrollador de software con experiencia en la creación de aplicaciones nativas mediante <span class="text-white font-semibold">Kotlin y Java</span>, así como en el desarrollo de herramientas de backend con <span class="text-white font-semibold">Python</span>. Me enfoco en escribir código limpio y eficiente.
+            </p>
+            
+            <p class="text-gray-400 leading-relaxed mb-8">
+                Actualmente, estoy expandiendo mis capacidades hacia el desarrollo moderno con <span class="text-cyan-400 font-semibold">React</span>, con el objetivo de consolidar un perfil Full Stack y abordar proyectos de mayor complejidad técnica.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                
+                <div class="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:border-blue-500/30 transition-colors">
+                    <i data-lucide="smartphone" class="text-blue-500"></i>
+                    <span>Android Dev</span>
+                </div>
+                
+                <div class="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:border-green-500/30 transition-colors">
+                    <i data-lucide="code" class="text-green-500"></i>
+                    <span>Python & Data</span>
+                </div>
+                
+                <div class="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:border-cyan-500/30 transition-colors">
+                    <i data-lucide="atom" class="text-cyan-400"></i>
+                    <span>React.js</span>
+                </div>
+
+                <div class="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:border-orange-500/30 transition-colors">
+                    <i data-lucide="git-branch" class="text-orange-500"></i>
+                    <span>Git & GitHub</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+  <footer id="contacto" class="py-24 border-t border-white/5 bg-black/50 relative">
+    
+    <div id="toast-copy" class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-2xl transform translate-y-20 opacity-0 transition-all duration-500 z-50 flex items-center gap-2 font-medium pointer-events-none">
+        <i data-lucide="check-circle" size="20"></i>
+        ¡Email copiado!
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-6">¿Hablamos?</h2>
+        <p class="text-gray-400 mb-10 max-w-xl mx-auto">
+            Actualmente estoy abierto a nuevas oportunidades. Si tienes un proyecto o vacante, contáctame.
+        </p>
+
+        <div class="flex justify-center gap-6 mb-8">
+            <button onclick="copyEmail()" class="p-4 bg-white/5 rounded-2xl hover:bg-blue-600/20 hover:scale-110 hover:border-blue-500/50 border border-white/10 transition-all group" title="Copiar Email">
+                <i data-lucide="mail" class="text-gray-400 group-hover:text-blue-500 transition-colors" size="24"></i>
+            </button>
+            
+            <a href="https://linkedin.com/in/sergio-pastor-castellón-507b82265/" target="_blank" class="p-4 bg-white/5 rounded-2xl hover:bg-blue-600/20 hover:scale-110 hover:border-blue-500/50 border border-white/10 transition-all group" title="LinkedIn">
+                <i data-lucide="linkedin" class="text-gray-400 group-hover:text-blue-500 transition-colors" size="24"></i>
             </a>
-            <a href="https://github.com" target="_blank"
-                class="p-4 bg-white/5 rounded-2xl hover:bg-blue-500 transition-all group border border-white/5">
-                <i data-lucide="github" class="group-hover:scale-110 transition-transform"></i>
+
+            <a href="https://github.com/sergiopas97" target="_blank" class="p-4 bg-white/5 rounded-2xl hover:bg-blue-600/20 hover:scale-110 hover:border-blue-500/50 border border-white/10 transition-all group" title="GitHub">
+                <i data-lucide="github" class="text-gray-400 group-hover:text-blue-500 transition-colors" size="24"></i>
             </a>
         </div>
-        <p class="text-gray-600 text-xs mt-12 italic">© 2025 Sergio Pastor | El Siscar, Murcia</p>
-    </footer>
+
+        <div class="mb-12">
+            <a href="cv-sergio-pastor.pdf" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600/10 text-blue-400 hover:bg-blue-600 hover:text-white transition-all border border-blue-500/20 text-sm font-semibold">
+                <i data-lucide="download" size="16"></i>
+                Descargar Currículum
+            </a>
+        </div>
+
+        <p class="text-gray-600 text-sm">© 2025 Sergio Pastor | Murcia, España</p>
+    </div>
+</footer>
 
     <div id="modal-fitness"
         class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-black/90 backdrop-blur-sm">
@@ -465,6 +511,22 @@
             if (event.target == modalVending) closeModal('modal-vending'); // Nuevo
         }
 
+function copyEmail() {
+    const email = "sergio041997@gmail.com";
+    
+    // Copiar al portapapeles
+    navigator.clipboard.writeText(email).then(() => {
+        
+        // Mostrar el mensaje de "Copiado"
+        const toast = document.getElementById('toast-copy');
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        
+        // Ocultar el mensaje a los 3 segundos
+        setTimeout(() => {
+            toast.classList.add('translate-y-20', 'opacity-0');
+        }, 3000);
+    });
+}
     </script>
 </body>
 
